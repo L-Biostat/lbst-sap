@@ -1,0 +1,17 @@
+title: Lbst-sap
+author: Alexandre Bohyn
+version: 1.0.0
+quarto-required: ">=1.4.0"
+contributes:
+  formats:
+    pdf:
+      toc: true
+      lof: true
+      lot: true
+      number-sections: true
+      include-in-header: header.tex
+    html:
+      toc: true
+      theme: yeti
+      title-block-banner: "#223f7b"
+      embed-resources: true

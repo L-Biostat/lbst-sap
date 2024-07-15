@@ -1,0 +1,95 @@
+% load packages
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage{pdflscape}
+\usepackage{fontawesome}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+
+% Use Helvetica as the default font
+\renewcommand{\familydefault}{\sfdefault}
+
+% Define the size of the page
+\geometry{
+  top=3.5cm, % Total space for the header
+  headheight=3cm, % Height of the header
+  headsep=0.5cm, % Space between the header and the text body
+  bottom=2.5cm, % Total space for the footer
+  footskip=0.5cm % Space between the footer and the text body
+}
+
+% Define some colours
+\definecolor{lightgray}{gray}{0.5}
+
+% Define commands for the title and the date in the header
+\makeatletter
+\newcommand{\headerdate}{\@date}
+\newcommand{\headertitle}{SAP - \MakeUppercase{\@title}}
+\makeatother
+
+% Define the style of the first page 'firstpagestyle'
+\fancypagestyle{firstpagestyle}{
+  \fancyhf{}
+  \fancyhead[L]{
+    \textcolor{lightgray}{
+      \footnotesize \sffamily Group biomedical sciences, Deptartment Public Health\\Interuniversity center for Biostatistics and Statistical Bioinformatics\\Kapucijnenvoer 7 bus 7001 BE-3000 LEUVEN
+    }
+  }
+  \fancyhead[R]{\includegraphics[height=1.5cm]{_extensions/lbst-sap/logo.png}}
+  \fancyfoot[L]{
+    \textcolor{lightgray}{
+      \footnotesize \sffamily Alexandre Bohyn, PhD, Statistical consultant\\alexandre.bohyn@kuleuven.be\\~\faPhone~ +32 16 32 80 65
+    }
+  }
+  \fancyfoot[R]{
+    \textcolor{lightgray}{
+      \footnotesize \sffamily \thepage/\pageref*{LastPage}
+    }
+  }
+  % Remove the line below the header
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+% Define the style of all other pages 'basestyle'
+\fancypagestyle{basestyle}{
+  \fancyhf{}
+  \fancyhead[L]{\textcolor{lightgray}{\footnotesize \sffamily \headertitle}}
+  \fancyhead[R]{\textcolor{lightgray}{\footnotesize \sffamily \headerdate}}
+  \fancyfoot[L]{
+    \textcolor{lightgray}{
+      \footnotesize \sffamily Alexandre Bohyn, PhD, Statistical consultant\\alexandre.bohyn@kuleuven.be\\~\faPhone~ +32 16 32 80 65
+    }
+  }
+  \fancyfoot[R]{
+    \textcolor{lightgray}{
+      \sffamily \thepage/\pageref*{LastPage}
+    }
+  }
+  % Remove the line below the header
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+% Apply the base style in general
+\pagestyle{basestyle}
+
+% Apply the firstpage style to the first page
+\thispagestyle{firstpagestyle}
+
+% Left align the title and authors
+\makeatletter
+\renewcommand{\maketitle}{\bgroup\setlength{\parindent}{0pt}
+\begin{flushleft}
+  {\sffamily\huge\textbf{SAP: \MakeUppercase{\@title}}} \vspace{0.3cm} \newline
+  {\sffamily\Large\textbf{\@subtitle}} \vspace{0.3cm} \newline 
+  \@author \newline
+  \@date
+\end{flushleft}\egroup
+}
+\makeatother
+
+% Define landscape commands
+\newcommand{\blandscape}{\begin{landscape}}
+\newcommand{\elandscape}{\end{landscape}}
