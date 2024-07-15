@@ -1,4 +1,4 @@
-# lbst SAP
+# lbst SAP <img align="right" height="100" src="https://ibiostat.be/images/IBiostat-logo.png/@@images/image/preview">
 
 Quarto extension for a template to generate a PDF (or an html file) for a 
 statistical analysis plan (SAP) for a L-Biostat project.
