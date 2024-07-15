@@ -14,7 +14,8 @@ To install the Quarto extension, create a directory, and use the template file:
 quarto use template L-Biostat/lbst-sap
 ```
 
-To use the extension in an existing project without installing the template file:
+To use the extension in an existing project without installing the template 
+file:
 
 ``` bash
 quarto install extension L-Biostat/lbst-sap
@@ -27,7 +28,14 @@ format:
   pdf: lbst-sap
 ```
 
-in the `yaml` header of your main quarto file.
+for pdf outputs, or 
+
+```
+format:
+  html: lbst-sap
+```
+
+for html outputs, in the `yaml` header of your main quarto file.
 
 ## Adjusting details
 
@@ -37,5 +45,6 @@ hand in the `_extension/lbst-sap/header.tex` file.
 
 ## Example
 
-Here is the source code for a minimal sample document: [example.qmd](example.qmd).
+Here is the source code for a minimal sample document: 
+[template.qmd](template.qmd).
 
